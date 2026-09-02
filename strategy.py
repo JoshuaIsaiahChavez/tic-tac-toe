@@ -44,7 +44,7 @@ def choose_move(game, player):
     
     # Step 1: find out which moves are still available.
     open_squares = game.available_moves()
-
+# Go All In
     # Step 2: for now, just take the first one on the list.
     my_choice = open_squares[0]
 
