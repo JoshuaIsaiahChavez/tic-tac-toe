@@ -44,11 +44,29 @@ def choose_move(game, player):
     
     # Step 1: find out which moves are still available.
     open_squares = game.available_moves()
-# Go All In
-    # Step 2: for now, just take the first one on the list.
-    my_choice = open_squares[0]
+    
+    # Step 2: If the center square is open, take it first.
+    if 5 in open_squares:
+        return 5 
+    
+    # Step 3: If corner 1 is available, put an X there.
+    if 1 in open_squares:
+        return 1
 
-    # Step 3: return the position number you chose.
-    return my_choice
+    # If corner 3 is available, put an X there.
+    if 3 in open_squares:
+        return 3
 
+    # If corner 7 is available, put an X there.
+    if 7 in open_squares: 
+        return 7
 
+    # If corner 9 is available, put an X there.
+    if 9 in open_squares:
+        return 9
+
+    # Step 4: If corners are gone, choose an open side.
+    sides = [2,4,6,8]
+    for side in sides:
+        if side in open_squares:
+            return side
